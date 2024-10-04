@@ -1,0 +1,46 @@
+This pattern is allows objects with differnt interfaces to collaborate.
+
+** Here the output class is is the parent class of adapter
+** You may either use adapter class and its service separtely or directly.
+
+
+**Suppose you are stock marketing app
+//** You have a dataAnalytics libarray get JSON input and produce results
+//You are getting data from stockMarket in XML format.
+
+One method comes in your mind just convert the xml format to json via making separte class
+
+//**** In this approach there might chances we may loose some methods|| such kind a thing.   thats why we will use an resultant class as our parent class so we have less chance to anything left 
+
+ public Adapter{
+
+   public Adapter(){
+}
+ public JSON service(XML format)
+{  
+    JSON obj1 = new JSON();
+    format.elements = obj1.elements;  //using some regulare expression.
+
+return JSON.
+
+}
+}
+
+
+//########## FINAL Solution;
+public Adapter extends JSON{
+  XML format;
+public Adapter(XML format)
+{
+  this.format = format;
+}
+
+//@overridng methods
+ public String elements(){
+   super.elements = format.elements;
+ }
+
+
+}
+
+
