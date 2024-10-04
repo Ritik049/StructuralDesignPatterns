@@ -1,0 +1,137 @@
+Bridge Design Pattern: It is allowed to separate large set of closely related classes into abstraction and implementation which can be independently developed of each other.
+
+Abstraction: It mainly deals what to do < Here the concrete implementation done what is doing at GUI Level>
+Implementation: Mainly deals how to do < here the concrete implemenation done what is happening in backend>
+
+
+Suppose we have a device TV and Radio
+And we have remote for all these. BAsic remote and advanced REmote
+
+If we make classes for remote
+Remote ->  BasicTVRemote , AdvancedTVRemote, BasicRadioRemote, AdvanceRadioRemote.
+Suppose we have a AC then again 2 classes get add , and if we add one remote classes then again we got muliple classes.
+
+
+
+** WE will use Bridge Design pattern where we make abstraction and implementation differntly where these exist separately each out of other.
+
+
+//ABSTRACT REMOTE
+
+public interface Remote{
+
+  Device device;
+
+   public Remote(Device device)
+{
+  this.device = device;
+}
+  public void turnOn() ;
+public void  turnOff();
+
+  
+}
+
+public class BasicRemote implements Remote{
+
+   
+   public BasicRemote(Device device)
+   {
+    super(device)
+   } 
+
+   public void turnOn
+{
+  device.turnOn()
+}
+
+   public void turnOff()
+{
+  device.turnOff();
+}
+ 
+}
+
+
+public class AdvanceRemote implements Remote{
+
+   
+   public AdvanceRemote(Device device)
+   {
+    super(device)
+   } 
+
+   public void turnOn
+{
+  device.turnOn()
+}
+
+   public void turnOff()
+{
+  device.turnOff();
+}
+
+  public void mute()
+{
+ device.setVolume(0);
+ device.getVolume();
+} 
+}
+
+
+//Device
+public interface device{
+
+  public void turnOn;
+  public void turnOff();
+  public void setVolume();
+  public int getVolume();
+}
+
+public TV implements device{
+
+  int volume;
+ public TV()
+{ 
+  volume = 0;
+ }
+
+public void turnOn()->System.out.println("TURN ON");
+  public void turnOff()->System.out.println("TURN OFF");
+  public void setVolume(int volume)->volume = volume;
+  public int getVolume();return volume;
+}
+
+
+ 
+}
+
+
+Client
+
+public class Client{
+
+  public static void main(String[]args)
+  {
+     Device device = new TV();
+     Remote remote1 = new BasicRemote(device);
+     Remote remote2 = new AdvanceRemote(new Radio());
+
+    remote1.turnOn();
+   remote2.turnOff();
+   (AdvancedRemote) remote2.mute();
+    
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
