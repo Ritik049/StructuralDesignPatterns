@@ -1,0 +1,80 @@
+Composite Design Pattern: It allows to you arrange objects in a tree like strucutrue where each of the structure behaves like independent object;
+
+Classes:
+Interface: these are common for all the objectes either files/directory.
+Concrete objects: File: 
+Concrete Objects: Directory: 
+
+
+Need:
+** Suppose we need to find how much files are in one folder-->  You may simply say just run a for loop in list component of folder
+ ** But what if we need to store the directory as well as files in a parent directory iteself:
+  ** Following problem arises,
+       ---> We need to make different different lists 
+       --->Flexibility: You can add new types of components (e.g., different types of files or directories) without changing existing code.
+      -----> Simplicity: Clients can treat all components uniformly through the FileSystemComponent interface, simplifying the client code.
+
+
+
+** Here we can observe,  that in creational design patterns we are dealing with the constructors mostly but now we are dealing with the object functionalities which are influenced by other objects as well.
+Solution: We use composite Structural Design Pattern
+
+
+//Interface
+public Interface SystemFile{
+
+    public void showDetails();
+
+    public  int getCount();
+}
+
+public class File implements SystemFile{
+
+     public void showDetails(){
+       System.out.println("This is a file");
+     }
+    public int getCount() return 1;
+}
+
+public class Dir implements SystemFile{
+
+     
+      List<SystemFile> lst = new ArrayList<>();
+
+     public void showDetails(){
+       System.out.println("This is a Directory");
+     }
+    public int getCount()
+    {
+     return lst.size();
+    }
+
+  public void addComponent(SystemFile systemFile)
+   {
+       lst.add(systemFile);
+   }
+
+   public void removeComponent(SystemFile systemFile)
+   {
+       lst.remove(systemFile);
+   }
+         
+} 
+
+
+public class Client{
+
+  public static void main(String[]args) 
+   {
+       File f1 = new File();
+        File f2 = new File()
+
+         Dir d1 = new Dir();
+         d1.addComponent(f1);
+         d1.addComponent(f2);
+         d1.addComponent(d2);
+   }
+}
+
+
+   
