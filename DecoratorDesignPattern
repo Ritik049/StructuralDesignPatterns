@@ -1,0 +1,20 @@
+Decorator:  Design Pattern is used to add new functionalities in the exisiting object.
+Attach new behaviours, by placing the object into special wrapper objects that contain behaviours.
+
+Classes
+Interface ->Product
+Concrete Prodcut
+Decorator Interface implements Interface of Product               <Here we are not returning anything we are just, modifiying that object remember this.
+ConcreteDecorator implements<extends> decorator.
+
+
+Problem: Suppose we need to make a notification library, intially when are making we have only notify() function, which send only mail at SMS, but we now need to send email notification, social Media notification
+*First solution hit in our mind we have a base class and we extend for SMS, email 
+  __> Problem in this approach suppose we need to make a several types of it so we again need to make different different classes. which will be very clumsy at programming level.
+
+**
+
+
+
+
+
