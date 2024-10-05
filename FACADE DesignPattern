@@ -1,0 +1,19 @@
+It provides a simplified interface for a libarary /framework or any other other complex set of classes.
+
+Classes:
+Facade --> (it  basically contains all the functions which we can run once); and mostly the setting part
+Client --> 
+Rest are the different differnt classes (which creates dependency in facade)
+
+** 
+Components
+Subsystem Classes: These are the complex parts of the system.
+Facade: This is the simplified interface that interacts with the subsystem classes.
+**
+
+
+Problem: We want to make a hometheatre system, now we wnat to on it, then we need to on the whole dvdPlyaer, SoundSystem, Projector 
+
+**If we directly call on main funciton then following principle violate: 
+single responsibility
+OCD < in case we add a kind of differetn SoundSystem> (client code is heavy to change tend to avoid change in it.)
