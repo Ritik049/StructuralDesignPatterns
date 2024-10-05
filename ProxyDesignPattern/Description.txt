@@ -1,0 +1,17 @@
+Proxy Design Pattern: It provides the surrogate or placeholder for another object to control access to it. It mostly uses to get rid of heavy configuration intialisations.
+
+
+Intent:
+Singleton: Ensures a single instance.
+Proxy: Controls access to another object.
+Scope:
+Singleton: Global access point.
+Proxy: Local control over access.
+
+Usage:
+Singleton: Used for managing shared resources.
+Proxy: Used for adding functionality like lazy loading, access control, etc.
+
+Here we use database and its proxy, we directly use proxy, and in proxy automatically database connection get instantiate if not present, if yes, then we will get these things form that same connection.
+
+** here some extra/limited access also involve.
