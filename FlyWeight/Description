@@ -1,1 +1,24 @@
+FlyWeight Design Pattern : Structural Design pattern let you fit more object in a available amount of ram by sharing some  common parts of state between multiple objects.
+
+Need: Supposwe we are making a graph editor, and we gonna use lots of lots of images in it. everytime for new images if we make instantiate the new object this will definitely blow our RAM.
+
+Solution: We use a kind of shared memory or kind a shared access so we get saved from creating new instances every time.
+
+
+Classes
+Interface Flyweight (components which will be get shared)
+Concrete FlyWeight
+FlyWeightFactory --> Making instances
+
+Client ocde
+
+
+
+Problem: We need to make tree for differnt differtn color and texture and size 
+       1-> WE can instantiate tree every time and with differetn size and color --> which takes lot of memory
+       2-> We can use a singleTon pattern but when we change other property , first one also get change.
+
+** We want shared access but still we need different behaviour exhibits.
+
+** So we use a kind of this flyweight approach which is basically based on cache version(if we have already made then we shared the access).
 
